@@ -5,7 +5,7 @@
   'use strict';
 
   var WA_NUMBER = '917397260932';                 // +91 7397 260 932
-  var PRICES = { single: 800, double: 1500 };
+  var PRICES = { single: 900, double: 1500 };
   var ROOM_LABEL = { single: 'Single Capsule Room', double: 'Double Capsule Room (Couple)' };
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -375,7 +375,7 @@
     row.innerHTML =
       '<label><span>Room Type</span>' +
         '<select class="rr-type">' +
-          '<option value="single">Single Capsule — ₹800 / night</option>' +
+          '<option value="single">Single Capsule — ₹900 / night</option>' +
           '<option value="double">Double Capsule — ₹1500 / night</option>' +
         '</select>' +
       '</label>' +
