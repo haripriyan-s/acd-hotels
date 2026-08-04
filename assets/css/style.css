@@ -175,7 +175,8 @@ ul{margin:0;padding:0;list-style:none}
 .brand img{width:clamp(38px,4.4vw,46px);height:auto;border-radius:10px;transition:transform .5s var(--ease)}
 .brand:hover img{transform:rotate(-6deg) scale(1.08)}
 .brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-.brand-txt strong{font-family:'Playfair Display',serif;font-size:1.06rem;letter-spacing:.02em;
+.brand-txt strong{font-family:'Playfair Display',serif;font-size:1.06rem;
+  text-transform:uppercase;letter-spacing:.05em;
   background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brand-txt small{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--txt-dim);white-space:nowrap}
 
