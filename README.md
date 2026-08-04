@@ -85,8 +85,8 @@ To change the number, edit `WA_NUMBER` at the top of `assets/js/main.js` and the
 
 - Content is limited to what the live site publishes: two room types, six amenities, nine gallery
   images, six Google reviews, the 4.8 rating, and the 12:00 PM / 11:00 AM check-in times.
-- Room "SOLD OUT" badges and pod counts (14 single, 4 double) mirror the live site. Remove the
-  `badge-sold` spans in `index.html` when availability returns.
+- Room cards show the pod counts from the live site (14 single, 4 double). The live site's
+  "SOLD OUT" badges are deliberately not carried over — the rooms read as bookable.
 - Motion respects `prefers-reduced-motion`; the marquee, Ken Burns pan, parallax, and cursor glow
   all switch off for users who ask for reduced motion.
 - Verified at 320, 390, 768, 1440 px with no horizontal overflow and no console errors.
