@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<title>ACD Hotels Chennai – Book Premium Capsule Hotel | Advanced Comfort Dwelling</title>
+<meta name="description" content="Premium capsule hotel in Chennai offering single and couple pods with pay-at-hotel booking, free laundry, self-cooking kitchen and high-speed WiFi.">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero_1.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<meta property="og:title" content="ACD Hotels Chennai – Premium Capsule Hotel">
+<meta property="og:description" content="Premium Capsule Experience — Where Tomorrow's Comfort Meets Today's Adventure.">
+<meta property="og:image" content="assets/img/hero_1.jpg">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "ACD Hotels – Advanced Comfort Dwelling",
+  "description": "Premium capsule hotel in Chennai offering single and couple pods with pay-at-hotel booking, free laundry, self-cooking kitchen and high-speed WiFi.",
+  "url": "https://acdhotels.in/",
+  "telephone": "+91-73972-60932",
+  "priceRange": "₹800–₹1500",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chennai",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "starRating": { "@type": "Rating", "ratingValue": "4.8" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "ratingCount": "120"
+  },
+  "checkinTime": "12:00",
+  "checkoutTime": "11:00",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Free Laundry", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Self-Cooking Kitchen", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "High-Speed WiFi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Snooker Table", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true }
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "name": "Single Capsule Room", "price": "800", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Double Capsule Room", "price": "1500", "priceCurrency": "INR" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <img src="assets/img/logo.png" alt="" class="pre-logo">
+    <div class="pre-bar"><span id="preBar"></span></div>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ CURSOR GLOW (desktop) ============ -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <a href="#home" class="brand" aria-label="ACD Hotels home">
+    <img src="assets/img/logo.png" alt="ACD Hotels" width="46" height="46">
+    <span class="brand-txt">
+      <strong>ACD Hotels</strong>
+      <small>Advanced Comfort Dwelling</small>
+    </span>
+  </a>
+
+  <nav class="desk-nav" aria-label="Primary">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#rooms" class="nav-link">Rooms</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <button class="btn btn-gold btn-sm js-book" data-magnetic>Book Now</button>
+  </nav>
+
+  <button class="mob-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ MOBILE NAV ============ -->
+<nav class="mob-nav" id="mobNav" aria-label="Mobile" inert>
+  <a href="#about">About</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#rooms">Rooms</a>
+  <a href="#contact">Contact</a>
+  <button class="btn btn-gold js-book">Book Now</button>
+  <div class="mob-nav-foot">
+    <a href="tel:+917397260932">+91 73972 60932</a>
+    <a href="https://www.instagram.com/acdhotels_pod_chennai?igsh=MTc1bXJtZ3k5Y3NqZw==" target="_blank" rel="noopener">@acdhotels_pod_chennai</a>
+  </div>
+</nav>
+<div class="nav-scrim" id="navScrim"></div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide is-active">
+      <img src="assets/img/hero_1.jpg" srcset="assets/img/hero_1-sm.jpg 900w, assets/img/hero_1.jpg 1920w" sizes="100vw" alt="ACD Hotels Capsule Room" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-slide"><img src="assets/img/hero_2.jpg" srcset="assets/img/hero_2-sm.jpg 900w, assets/img/hero_2.jpg 1920w" sizes="100vw" alt="ACD Hotels Kitchen Amenities" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="assets/img/hero_3.jpg" srcset="assets/img/hero_3-sm.jpg 900w, assets/img/hero_3.jpg 1920w" sizes="100vw" alt="ACD Hotels Snooker Table" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="assets/img/hero_4.jpg" srcset="assets/img/hero_4-sm.jpg 900w, assets/img/hero_4.jpg 1920w" sizes="100vw" alt="ACD Hotels Capsule Interior" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="assets/img/hero_5.jpg" srcset="assets/img/hero_5-sm.jpg 900w, assets/img/hero_5.jpg 1920w" sizes="100vw" alt="ACD Hotels Common Area" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="assets/img/hero_6.jpg" srcset="assets/img/hero_6-sm.jpg 900w, assets/img/hero_6.jpg 1920w" sizes="100vw" alt="ACD Hotels Laundry" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="assets/img/hero_7.jpg" srcset="assets/img/hero_7-sm.jpg 900w, assets/img/hero_7.jpg 1920w" sizes="100vw" alt="ACD Hotels Storage Lockers" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="assets/img/hero_8.jpg" srcset="assets/img/hero_8-sm.jpg 900w, assets/img/hero_8.jpg 1920w" sizes="100vw" alt="ACD Hotels Reception" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="assets/img/hero_9.jpg" srcset="assets/img/hero_9-sm.jpg 900w, assets/img/hero_9.jpg 1920w" sizes="100vw" alt="ACD Hotels Premium Double Pod" loading="lazy" decoding="async"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid-lines" data-parallax="0.12"></div>
+
+  <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="hero-arrow hero-next" id="heroNext" aria-label="Next image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+  </button>
+  <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero images"></div>
+
+  <div class="hero-content">
+    <div class="hero-pill reveal"><span class="ping"></span> Now Open in Chennai</div>
+    <h1 class="hero-title">
+      <span class="line"><span>Advanced</span></span>
+      <span class="line"><em class="gtext">Comfort</em></span>
+      <span class="line"><span>Dwelling</span></span>
+    </h1>
+    <p class="hero-sub reveal" data-delay="120">Premium Capsule Experience — Where Tomorrow's Comfort Meets Today's Adventure. Built for Explorers Who Refuse to Compromise.</p>
+
+    <div class="hero-rating reveal" data-delay="200">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="rate-txt"><strong>4.8 / 5</strong><span>Google Reviews</span></div>
+    </div>
+
+    <div class="hero-cta reveal" data-delay="280">
+      <button class="btn btn-gold btn-lg js-book" data-magnetic>Reserve Your Pod</button>
+      <a href="#rooms" class="btn btn-ghost btn-lg" data-magnetic>Explore Rooms</a>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <span>Scroll</span>
+    <i></i>
+  </a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="wrap about-wrap">
+    <div class="about-copy">
+      <p class="eyebrow reveal">About ACD Hotels</p>
+      <h2 class="reveal" data-delay="60">The Advanced<br><em class="gtext">Comfort</em> Dwelling</h2>
+      <p class="lead reveal" data-delay="120">
+        <strong>ACD — Advanced Comfort Dwelling</strong> — is Chennai's most exciting capsule hotel.
+        We reimagined budget travel as a five-star adventure. Premium pods, zero compromise.
+      </p>
+
+      <div class="check-strip reveal" data-delay="180">
+        <div><span>Check-in</span><strong>12:00 PM</strong></div>
+        <i aria-hidden="true"></i>
+        <div><span>Check-out</span><strong>11:00 AM</strong></div>
+      </div>
+
+      <ul class="chips reveal" data-delay="240">
+        <li>Premium Capsule Design</li>
+        <li>Couple Friendly</li>
+        <li>Pay at Hotel</li>
+        <li>Ultra-Clean Facilities</li>
+        <li>Adults Only 18+</li>
+        <li>Prime Location</li>
+      </ul>
+
+      <div class="stat-row reveal" data-delay="300">
+        <div class="stat"><strong class="count" data-count="4.8" data-dec="1">0</strong><span>Google Rating</span></div>
+        <div class="stat"><strong>₹<span class="count" data-count="800">0</span></strong><span>From / Night</span></div>
+      </div>
+    </div>
+
+    <div class="about-gallery">
+      <figure class="ag ag-1 reveal" data-delay="80" data-tilt>
+        <img src="assets/img/about_2.jpg" srcset="assets/img/about_2-sm.jpg 900w, assets/img/about_2.jpg 1920w" sizes="(max-width:900px) 90vw, 30vw" alt="Premium single capsule pod with fresh linen at ACD Hotels Chennai" loading="lazy" decoding="async">
+      </figure>
+      <figure class="ag ag-2 reveal" data-delay="160" data-tilt>
+        <img src="assets/img/about_1.jpg" srcset="assets/img/about_1-sm.jpg 900w, assets/img/about_1.jpg 1920w" sizes="(max-width:900px) 45vw, 22vw" alt="Capsule pod interior with vanity mirror at ACD Hotels Chennai" loading="lazy" decoding="async">
+      </figure>
+      <figure class="ag ag-3 reveal" data-delay="240" data-tilt>
+        <img src="assets/img/about_5.jpg" srcset="assets/img/about_5-sm.jpg 900w, assets/img/about_5.jpg 1920w" sizes="(max-width:900px) 45vw, 22vw" alt="Bunk-style capsule pods with ladder access at ACD Hotels" loading="lazy" decoding="async">
+      </figure>
+      <figure class="ag ag-4 reveal" data-delay="320" data-tilt>
+        <img src="assets/img/about_3.jpg" srcset="assets/img/about_3-sm.jpg 900w, assets/img/about_3.jpg 1920w" sizes="(max-width:900px) 45vw, 22vw" alt="Evening city skyline view from ACD Hotels Chennai balcony" loading="lazy" decoding="async">
+      </figure>
+      <figure class="ag ag-5 reveal" data-delay="400" data-tilt>
+        <img src="assets/img/about_4.jpg" srcset="assets/img/about_4-sm.jpg 900w, assets/img/about_4.jpg 1920w" sizes="(max-width:900px) 45vw, 22vw" alt="Modern marble bathroom with rain shower at ACD Hotels Chennai" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AMENITIES ============ -->
+<section class="section amenities" id="amenities">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">What Awaits You</p>
+      <h2 class="reveal" data-delay="60">Amenities That <em class="gtext">Spark Joy</em></h2>
+      <p class="sec-sub reveal" data-delay="120">Every detail crafted for the modern explorer. We turned the pod into your favourite place on earth.</p>
+    </header>
+
+    <div class="amen-grid">
+      <article class="amen-card reveal" data-delay="60" data-tilt>
+        <div class="amen-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7a3 3 0 0 0 3 3 3 3 0 0 0 3-3V2"/><path d="M6 2v10"/><path d="M6 12v10"/><path d="M18 2c-1.7 0-3 2.2-3 5s1.3 5 3 5"/><path d="M18 12v10"/></svg>
+        </div>
+        <h3>Self-Cooking Kitchen</h3>
+        <p>Your inner Gordon Ramsay has been waiting. Fully equipped communal kitchen — cook, feast, repeat.</p>
+        <span class="amen-tag">Cook Your Story</span>
+      </article>
+
+      <article class="amen-card reveal" data-delay="120" data-tilt>
+        <div class="amen-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="3"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="1.6"/><path d="M7 6h3"/></svg>
+        </div>
+        <h3>Free Laundry</h3>
+        <p>Pack light, travel bright. Free laundry so you always look like you own the city.</p>
+        <span class="amen-tag">Always Fresh</span>
+      </article>
+
+      <article class="amen-card reveal" data-delay="180" data-tilt>
+        <div class="amen-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        </div>
+        <h3>High-Speed WiFi</h3>
+        <p>Stream, scroll, and stay connected at full speed. Lightning-fast WiFi, no buffering, no limits.</p>
+        <span class="amen-tag">Always Connected</span>
+      </article>
+
+      <article class="amen-card reveal" data-delay="240" data-tilt>
+        <div class="amen-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="10" r="1.4"/><circle cx="15" cy="14" r="1.4"/><circle cx="16.5" cy="9" r="1.4"/></svg>
+        </div>
+        <h3>Snooker Table</h3>
+        <p>Challenge a fellow traveller. Our full-size snooker table is where friendships and bragging rights are earned.</p>
+        <span class="amen-tag">Game On</span>
+      </article>
+
+      <article class="amen-card reveal" data-delay="300" data-tilt>
+        <div class="amen-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2"/><path d="M2 12h20v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z"/><path d="M7 20l-1 2"/><path d="M17 20l1 2"/></svg>
+        </div>
+        <h3>Pristine Bathrooms</h3>
+        <p>Spotless. Sanitised. Sparkling. Inspected with military precision — a shower that feels like a standing ovation.</p>
+        <span class="amen-tag">Squeaky Clean</span>
+      </article>
+
+      <article class="amen-card reveal" data-delay="360" data-tilt>
+        <div class="amen-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+        </div>
+        <h3>Pay at Hotel</h3>
+        <p>No prepayments. Book with ease, arrive with confidence, pay when you get here. Hospitality the honest way.</p>
+        <span class="amen-tag">Zero Stress Booking</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROOMS ============ -->
+<section class="section rooms" id="rooms">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">Choose Your Pod</p>
+      <h2 class="reveal" data-delay="60">Capsule Rooms <em class="gtext">Redefined</em></h2>
+      <p class="sec-sub reveal" data-delay="120">Premium comfort at prices that make sense.</p>
+    </header>
+
+    <div class="room-grid">
+      <article class="room-card reveal" data-delay="80">
+        <div class="room-media">
+          <img src="assets/img/single.jpg" srcset="assets/img/single-sm.jpg 900w, assets/img/single.jpg 1920w" sizes="(max-width:800px) 92vw, 46vw" alt="Single capsule pod - Solo Explorer at ACD Hotels Chennai" loading="lazy" decoding="async">
+          <span class="badge-sold">SOLD OUT</span>
+          <span class="badge-count">14 pods available</span>
+        </div>
+        <div class="room-body">
+          <div class="room-top">
+            <div>
+              <h3>Solo Explorer</h3>
+              <p class="room-type">Single Capsule Room</p>
+            </div>
+            <div class="room-price"><strong>₹800</strong><span>/ night</span></div>
+          </div>
+          <ul class="room-feats">
+            <li>1 Person</li>
+            <li>Private Capsule</li>
+            <li>Reading Light</li>
+            <li>Power Outlets</li>
+            <li>AC Controlled</li>
+          </ul>
+          <button class="btn btn-gold btn-block js-book" data-room="single">Reserve Your Pod</button>
+        </div>
+      </article>
+
+      <article class="room-card reveal" data-delay="180">
+        <div class="room-media">
+          <img src="assets/img/double.jpg" srcset="assets/img/double-sm.jpg 900w, assets/img/double.jpg 1600w" sizes="(max-width:800px) 92vw, 46vw" alt="Double couple capsule suite at ACD Hotels Chennai" loading="lazy" decoding="async">
+          <span class="badge-sold">SOLD OUT</span>
+          <span class="badge-count">4 pods available</span>
+        </div>
+        <div class="room-body">
+          <div class="room-top">
+            <div>
+              <h3>Couple Suite</h3>
+              <p class="room-type">Double Capsule Room</p>
+            </div>
+            <div class="room-price"><strong>₹1500</strong><span>/ night</span></div>
+          </div>
+          <ul class="room-feats">
+            <li>2 Persons</li>
+            <li>Couple Friendly</li>
+            <li>Wider Capsule</li>
+            <li>Power Outlets</li>
+            <li>AC Controlled</li>
+          </ul>
+          <button class="btn btn-gold btn-block js-book" data-room="double">Reserve Your Pod</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">The ACD Experience</p>
+      <h2 class="reveal" data-delay="60">Glimpse of Your <em class="gtext">Next Adventure</em></h2>
+    </header>
+
+    <div class="gal-grid" id="galGrid">
+      <figure class="gal-item reveal" data-delay="40"><img src="assets/img/gal-premium_capsule_pods-sm.jpg" data-full="assets/img/gal-premium_capsule_pods.jpg" alt="Premium Capsule Pods at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Premium Capsule Pods</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="80"><img src="assets/img/gal-self_cooking_kitchen-sm.jpg" data-full="assets/img/gal-self_cooking_kitchen.jpg" alt="Self-Cooking Kitchen at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Self-Cooking Kitchen</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="120"><img src="assets/img/gal-snooker_table-sm.jpg" data-full="assets/img/gal-snooker_table.jpg" alt="Snooker Table at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Snooker Table</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="160"><img src="assets/img/gal-premium_bathrooms-sm.jpg" data-full="assets/img/gal-premium_bathrooms.jpg" alt="Premium Bathrooms at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Premium Bathrooms</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="200"><img src="assets/img/gal-common_lounge-sm.jpg" data-full="assets/img/gal-common_lounge.jpg" alt="Common Lounge at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Common Lounge</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="240"><img src="assets/img/gal-rooftop_lounge-sm.jpg" data-full="assets/img/gal-rooftop_lounge.jpg" alt="Rooftop Lounge at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Rooftop Lounge</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="280"><img src="assets/img/gal-rooftop_pool_table-sm.jpg" data-full="assets/img/gal-rooftop_pool_table.jpg" alt="Rooftop Pool Table at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Rooftop Pool Table</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="320"><img src="assets/img/gal-pod_corridors-sm.jpg" data-full="assets/img/gal-pod_corridors.jpg" alt="Pod Corridors at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Pod Corridors</figcaption></figure>
+      <figure class="gal-item reveal" data-delay="360"><img src="assets/img/gal-vintage_charm-sm.jpg" data-full="assets/img/gal-vintage_charm.jpg" alt="Vintage Charm at ACD Hotels Chennai" loading="lazy" decoding="async"><figcaption>Vintage Charm</figcaption></figure>
+    </div>
+
+    <div class="gal-cta reveal">
+      <button class="btn btn-gold btn-lg js-book" data-magnetic>Book Your Stay</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">What Guests Say</p>
+      <h2 class="reveal" data-delay="60">Real Stories, <em class="gtext">Real Smiles</em></h2>
+      <div class="rev-score reveal" data-delay="120">
+        <strong class="count" data-count="4.8" data-dec="1">0</strong><span>/ 5</span>
+        <div class="stars" aria-hidden="true"></div>
+        <p>Based on Google Reviews</p>
+      </div>
+    </header>
+  </div>
+
+  <div class="rev-marquee" id="revMarquee">
+    <div class="rev-track" id="revTrack">
+      <!-- populated by JS (duplicated for seamless loop) -->
+    </div>
+  </div>
+
+  <div class="wrap gal-cta reveal">
+    <a class="btn btn-ghost btn-lg" href="https://maps.app.goo.gl/BG25eWpSeKqWoAaF8?g_st=ac" target="_blank" rel="noopener" data-magnetic>View All Reviews on Google</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">Get in Touch</p>
+      <h2 class="reveal" data-delay="60">We're Just a <em class="gtext">Call Away</em></h2>
+      <p class="sec-sub reveal" data-delay="120">Got questions? We have answers — and a cosy capsule with your name on it.</p>
+    </header>
+
+    <div class="contact-grid">
+      <a class="c-card reveal" data-delay="60" href="tel:+917397260932" data-tilt>
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Call Us</h3>
+        <p>+91 73972 60932</p>
+        <span class="c-go">Tap to call</span>
+      </a>
+
+      <a class="c-card c-wa reveal" data-delay="120" href="https://wa.me/917397260932?text=Hi%20ACD%20Hotels!%20I'd%20like%20to%20know%20more%20about%20your%20capsule%20pods." target="_blank" rel="noopener" data-tilt>
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/></svg></div>
+        <h3>WhatsApp</h3>
+        <p>+91 73972 60932</p>
+        <span class="c-go">Chat with us</span>
+      </a>
+
+      <a class="c-card reveal" data-delay="180" href="https://www.instagram.com/acdhotels_pod_chennai?igsh=MTc1bXJtZ3k5Y3NqZw==" target="_blank" rel="noopener" data-tilt>
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        <h3>Instagram</h3>
+        <p>@acdhotels_pod_chennai</p>
+        <span class="c-go">Follow us</span>
+      </a>
+
+      <a class="c-card reveal" data-delay="240" href="https://maps.app.goo.gl/BG25eWpSeKqWoAaF8?g_st=ac" target="_blank" rel="noopener" data-tilt>
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Find Us</h3>
+        <p>Chennai, Tamil Nadu</p>
+        <span class="c-go">View on Google Maps</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap foot-in">
+    <img src="assets/img/logo.png" alt="ACD Hotels" class="foot-logo" width="90" height="90" loading="lazy">
+    <p class="foot-thanks">Thank you for choosing ACD Hotels.</p>
+    <p class="foot-sub">Your adventure begins here — see you in Chennai!</p>
+    <div class="foot-links">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="foot-copy">ACD Hotels · Advanced Comfort Dwelling · Chennai, Tamil Nadu</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a class="wa-float" href="https://wa.me/917397260932?text=Hi%20ACD%20Hotels!%20I'd%20like%20to%20book%20a%20capsule%20pod." target="_blank" rel="noopener" aria-label="Book on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
+  <span class="wa-label">Book on WhatsApp</span>
+</a>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <figure class="lb-fig"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></button>
+</div>
+
+<!-- ============ QUICK QUIZ ============ -->
+<div class="modal quiz-modal" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden>
+  <div class="modal-scrim" data-close-quiz></div>
+  <div class="modal-box quiz-box">
+    <button class="modal-x" aria-label="Close" data-close-quiz>&times;</button>
+    <h3 id="quizTitle">Let's find your pod</h3>
+    <p class="quiz-sub">Answer two quick questions and we'll set up your booking.</p>
+
+    <div class="quiz-q">
+      <p class="quiz-label">Who's travelling?</p>
+      <div class="quiz-opts" data-group="who">
+        <button class="quiz-opt is-on" data-val="single">Just me — Single</button>
+        <button class="quiz-opt" data-val="double">Couple — Double</button>
+      </div>
+    </div>
+
+    <div class="quiz-q">
+      <p class="quiz-label">How many rooms?</p>
+      <div class="quiz-opts" data-group="rooms">
+        <button class="quiz-opt is-on" data-val="1">1 Room</button>
+        <button class="quiz-opt" data-val="2">2 Rooms</button>
+        <button class="quiz-opt" data-val="3">3+ Rooms</button>
+      </div>
+    </div>
+
+    <button class="btn btn-gold btn-block" id="quizGo">Continue to Booking →</button>
+    <button class="quiz-skip" data-close-quiz>Maybe later</button>
+  </div>
+</div>
+
+<!-- ============ BOOKING PANEL ============ -->
+<div class="booking" id="booking" role="dialog" aria-modal="true" aria-labelledby="bkTitle" hidden>
+  <div class="bk-bar">
+    <button class="bk-back" id="bkBack">&larr; Back to Site</button>
+    <span class="bk-brand"><img src="assets/img/logo.png" alt="" width="26" height="26"> ACD Hotels · Secure Booking</span>
+  </div>
+
+  <div class="bk-scroll">
+    <div class="bk-inner">
+      <p class="eyebrow">Secure Your Capsule</p>
+      <h2 id="bkTitle">Book Your <em class="gtext">Dream Pod</em></h2>
+
+      <div class="bk-times">
+        <div><span>Check-in:</span><strong>12:00 PM</strong></div>
+        <div><span>Check-out:</span><strong>11:00 AM</strong></div>
+      </div>
+      <p class="bk-note">Early check-in is available subject to room availability.</p>
+
+      <form id="bkForm" novalidate>
+        <div class="bk-field-row">
+          <label class="bk-field">
+            <span>Full Name (As per Government ID)</span>
+            <input type="text" id="bkName" name="name" autocomplete="name" required placeholder="Your full name">
+          </label>
+          <label class="bk-field">
+            <span>Phone Number</span>
+            <input type="tel" id="bkPhone" name="phone" autocomplete="tel" inputmode="numeric" required placeholder="10-digit mobile number">
+          </label>
+        </div>
+
+        <div class="bk-field-row">
+          <label class="bk-field">
+            <span>Check-in Date</span>
+            <input type="date" id="bkIn" name="checkin" required>
+          </label>
+          <label class="bk-field">
+            <span>Check-out Date</span>
+            <input type="date" id="bkOut" name="checkout" required>
+          </label>
+        </div>
+
+        <div id="roomRows" class="room-rows"></div>
+
+        <button type="button" class="bk-add" id="bkAdd">+ Add Another Room</button>
+
+        <div class="bk-summary" id="bkSummary">
+          <h4>Booking Summary</h4>
+          <ul id="bkSumList"></ul>
+          <div class="bk-total"><span>Grand Total</span><strong id="bkTotal">—</strong></div>
+        </div>
+
+        <p class="bk-pay"><strong>Pay at Hotel —</strong> No prepayment required. Book now, pay when you arrive. Hospitality the honest way.</p>
+
+        <button type="submit" class="btn btn-wa btn-block btn-lg" id="bkSubmit">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
+          Confirm Booking via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SUCCESS ============ -->
+<div class="modal done-modal" id="doneModal" role="dialog" aria-modal="true" aria-labelledby="doneTitle" hidden>
+  <div class="modal-scrim" data-close-done></div>
+  <div class="modal-box done-box">
+    <div class="done-tick" aria-hidden="true">
+      <svg viewBox="0 0 52 52"><circle class="tick-c" cx="26" cy="26" r="24" fill="none"/><path class="tick-p" fill="none" d="M14 27l8 8 16-16"/></svg>
+    </div>
+    <h3 id="doneTitle">Booking Confirmed!</h3>
+    <p>Your reservation has been sent to ACD Hotels via WhatsApp. Our team will confirm shortly. Remember — pay at the hotel, no upfront payment needed.</p>
+    <button class="btn btn-gold btn-block" data-close-done>Done — See You Soon!</button>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
