@@ -34,7 +34,6 @@
   --ease-io:cubic-bezier(.65,.05,.36,1);
   --spring:cubic-bezier(.34,1.56,.64,1);   /* overshoots slightly — the bouncy one */
 
-  --mint:#9dffb0;                          /* secondary accent, used sparingly */
   --display:'Space Grotesk','Inter',sans-serif;
 
   --hdr-h:74px;
@@ -533,9 +532,6 @@ ul{margin:0;padding:0;list-style:none}
   transition:all .4s var(--spring);
 }
 .room-feats li:hover{color:var(--gold-lt);border-color:var(--gold);transform:translateY(-2px)}
-/* couple-friendly gets the mint pop so it reads at a glance on both 2-person pods */
-.room-feats li.is-couple{color:var(--mint);border-color:rgba(157,255,176,.3);background:rgba(157,255,176,.06)}
-.room-feats li.is-couple:hover{border-color:var(--mint);color:var(--mint)}
 .room-body .btn{margin-top:auto}
 
 /* ---------- GALLERY ---------- */
