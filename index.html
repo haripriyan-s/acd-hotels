@@ -26,7 +26,7 @@
   "description": "Premium capsule hotel in Chennai offering single and couple pods with pay-at-hotel booking, free laundry, self-cooking kitchen and high-speed WiFi.",
   "url": "https://acdhotels.in/",
   "telephone": "+91-73972-60932",
-  "priceRange": "₹900–₹1500",
+  "priceRange": "₹400–₹1500",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Chennai",
@@ -50,8 +50,15 @@
     { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true }
   ],
   "makesOffer": [
-    { "@type": "Offer", "name": "Single Capsule Room", "price": "900", "priceCurrency": "INR" },
-    { "@type": "Offer", "name": "Double Capsule Room", "price": "1500", "priceCurrency": "INR" }
+    { "@type": "Offer", "name": "Single Occupancy Pod (1 Person) — 3 Hours", "price": "400", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Single Occupancy Pod (1 Person) — 5 Hours", "price": "600", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Single Occupancy Pod (1 Person) — Full Day", "price": "900", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Single Occupancy Pod (2 Persons) — 3 Hours", "price": "800", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Single Occupancy Pod (2 Persons) — 5 Hours", "price": "1100", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Single Occupancy Pod (2 Persons) — Full Day", "price": "1200", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Double Occupancy Pod — 3 Hours", "price": "1100", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Double Occupancy Pod — 5 Hours", "price": "1300", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Double Occupancy Pod — Full Day", "price": "1500", "priceCurrency": "INR" }
   ]
 }
 </script>
@@ -138,7 +145,6 @@
   <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero images"></div>
 
   <div class="hero-content">
-    <div class="hero-pill reveal"><span class="ping"></span> Now Open in Chennai</div>
     <h1 class="hero-title">
       <span class="line"><span>Advanced</span></span>
       <span class="line"><em class="gtext">Comfort</em></span>
@@ -191,7 +197,7 @@
 
       <div class="stat-row reveal" data-delay="300">
         <div class="stat"><strong class="count" data-count="4.8" data-dec="1">0</strong><span>Google Rating</span></div>
-        <div class="stat"><strong>₹<span class="count" data-count="900">0</span></strong><span>From / Night</span></div>
+        <div class="stat"><strong>₹<span class="count" data-count="400">0</span></strong><span>From / 3 Hours</span></div>
       </div>
     </div>
 
@@ -288,23 +294,27 @@
     <header class="sec-head">
       <p class="eyebrow reveal">Choose Your Pod</p>
       <h2 class="reveal" data-delay="60">Capsule Rooms <em class="gtext">Redefined</em></h2>
-      <p class="sec-sub reveal" data-delay="120">Premium comfort at prices that make sense.</p>
+      <p class="sec-sub reveal" data-delay="120">Premium comfort at prices that make sense. Stay 3 hours, 5 hours, or the full day.</p>
     </header>
 
     <div class="room-grid">
       <article class="room-card reveal" data-delay="80">
         <div class="room-media">
-          <img src="assets/img/single.jpg" srcset="assets/img/single-sm.jpg 900w, assets/img/single.jpg 1920w" sizes="(max-width:800px) 92vw, 46vw" alt="Single capsule pod - Solo Explorer at ACD Hotels Chennai" loading="lazy" decoding="async">
+          <img src="assets/img/single.jpg" srcset="assets/img/single-sm.jpg 900w, assets/img/single.jpg 1920w" sizes="(max-width:760px) 92vw, 31vw" alt="Single capsule pod - Solo Explorer at ACD Hotels Chennai" loading="lazy" decoding="async">
           <span class="badge-count">14 pods available</span>
         </div>
         <div class="room-body">
           <div class="room-top">
             <div>
               <h3>Solo Explorer</h3>
-              <p class="room-type">Single Capsule Room</p>
+              <p class="room-type">Single Occupancy Pod · 1 Person</p>
             </div>
-            <div class="room-price"><strong>₹900</strong><span>/ night</span></div>
           </div>
+          <ul class="rate-list">
+            <li><span>3 Hours</span><strong>₹400</strong></li>
+            <li><span>5 Hours</span><strong>₹600</strong></li>
+            <li><span>Full Day</span><strong>₹900</strong></li>
+          </ul>
           <ul class="room-feats">
             <li>1 Person</li>
             <li>Private Capsule</li>
@@ -312,23 +322,54 @@
             <li>Power Outlets</li>
             <li>AC Controlled</li>
           </ul>
-          <button class="btn btn-gold btn-block js-book" data-room="single">Reserve Your Pod</button>
+          <button class="btn btn-gold btn-block js-book" data-room="single1">Reserve Your Pod</button>
         </div>
       </article>
 
-      <article class="room-card reveal" data-delay="180">
+      <article class="room-card reveal" data-delay="160">
         <div class="room-media">
-          <img src="assets/img/double.jpg" srcset="assets/img/double-sm.jpg 900w, assets/img/double.jpg 1600w" sizes="(max-width:800px) 92vw, 46vw" alt="Double couple capsule suite at ACD Hotels Chennai" loading="lazy" decoding="async">
+          <img src="assets/img/about_2.jpg" srcset="assets/img/about_2-sm.jpg 900w, assets/img/about_2.jpg 1920w" sizes="(max-width:760px) 92vw, 31vw" alt="Single capsule pod shared by two guests at ACD Hotels Chennai" loading="lazy" decoding="async">
+        </div>
+        <div class="room-body">
+          <div class="room-top">
+            <div>
+              <h3>Twin Explorer</h3>
+              <p class="room-type">Single Occupancy Pod · 2 Persons</p>
+            </div>
+          </div>
+          <ul class="rate-list">
+            <li><span>3 Hours</span><strong>₹800</strong></li>
+            <li><span>5 Hours</span><strong>₹1100</strong></li>
+            <li><span>Full Day</span><strong>₹1200</strong></li>
+          </ul>
+          <ul class="room-feats">
+            <li>2 Persons</li>
+            <li>Private Capsule</li>
+            <li>Reading Light</li>
+            <li>Power Outlets</li>
+            <li>AC Controlled</li>
+          </ul>
+          <button class="btn btn-gold btn-block js-book" data-room="single2">Reserve Your Pod</button>
+        </div>
+      </article>
+
+      <article class="room-card reveal" data-delay="240">
+        <div class="room-media">
+          <img src="assets/img/double.jpg" srcset="assets/img/double-sm.jpg 900w, assets/img/double.jpg 1600w" sizes="(max-width:760px) 92vw, 31vw" alt="Double occupancy capsule pod at ACD Hotels Chennai" loading="lazy" decoding="async">
           <span class="badge-count">4 pods available</span>
         </div>
         <div class="room-body">
           <div class="room-top">
             <div>
               <h3>Couple Suite</h3>
-              <p class="room-type">Double Capsule Room</p>
+              <p class="room-type">Double Occupancy Pod · 2 Persons</p>
             </div>
-            <div class="room-price"><strong>₹1500</strong><span>/ night</span></div>
           </div>
+          <ul class="rate-list">
+            <li><span>3 Hours</span><strong>₹1100</strong></li>
+            <li><span>5 Hours</span><strong>₹1300</strong></li>
+            <li><span>Full Day</span><strong>₹1500</strong></li>
+          </ul>
           <ul class="room-feats">
             <li>2 Persons</li>
             <li>Couple Friendly</li>
@@ -476,10 +517,20 @@
     <p class="quiz-sub">Answer two quick questions and we'll set up your booking.</p>
 
     <div class="quiz-q">
-      <p class="quiz-label">Who's travelling?</p>
+      <p class="quiz-label">Which pod?</p>
       <div class="quiz-opts" data-group="who">
-        <button class="quiz-opt is-on" data-val="single">Just me — Single</button>
-        <button class="quiz-opt" data-val="double">Couple — Double</button>
+        <button class="quiz-opt is-on" data-val="single1">Single — 1 person</button>
+        <button class="quiz-opt" data-val="single2">Single — 2 persons</button>
+        <button class="quiz-opt" data-val="double">Double — 2 persons</button>
+      </div>
+    </div>
+
+    <div class="quiz-q">
+      <p class="quiz-label">How long?</p>
+      <div class="quiz-opts" data-group="duration">
+        <button class="quiz-opt" data-val="3h">3 Hours</button>
+        <button class="quiz-opt" data-val="5h">5 Hours</button>
+        <button class="quiz-opt is-on" data-val="day">Full Day</button>
       </div>
     </div>
 
@@ -532,11 +583,12 @@
             <span>Check-in Date</span>
             <input type="date" id="bkIn" name="checkin" required>
           </label>
-          <label class="bk-field">
+          <label class="bk-field" id="bkOutField">
             <span>Check-out Date</span>
-            <input type="date" id="bkOut" name="checkout" required>
+            <input type="date" id="bkOut" name="checkout">
           </label>
         </div>
+        <p class="bk-note" id="bkHourlyNote" hidden>Hourly stays are same-day — just pick your date and arrival time with us on WhatsApp.</p>
 
         <div id="roomRows" class="room-rows"></div>
 

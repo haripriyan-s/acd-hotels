@@ -5,8 +5,18 @@
   'use strict';
 
   var WA_NUMBER = '917397260932';                 // +91 7397 260 932
-  var PRICES = { single: 900, double: 1500 };
-  var ROOM_LABEL = { single: 'Single Capsule Room', double: 'Double Capsule Room (Couple)' };
+  // rate = PRICES[pod][duration]; full-day rates additionally multiply by nights
+  var PRICES = {
+    single1: { '3h': 400, '5h': 600, day: 900 },
+    single2: { '3h': 800, '5h': 1100, day: 1200 },
+    double: { '3h': 1100, '5h': 1300, day: 1500 }
+  };
+  var ROOM_LABEL = {
+    single1: 'Single Occupancy Pod (1 Person)',
+    single2: 'Single Occupancy Pod (2 Persons)',
+    double: 'Double Occupancy Pod'
+  };
+  var DUR_LABEL = { '3h': '3 Hours', '5h': '5 Hours', day: 'Full Day' };
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, c) { return (c || document).querySelector(s); };
@@ -336,7 +346,7 @@
 
   /* ---------------- QUIZ ---------------- */
   var quiz = $('#quizModal');
-  var quizPick = { who: 'single', rooms: '1' };
+  var quizPick = { who: 'single1', duration: 'day', rooms: '1' };
   var quizSeen = false;
 
   function quizOpen() {
@@ -360,7 +370,9 @@
   $$('[data-close-quiz]').forEach(function (el) { el.addEventListener('click', quizClose); });
   $('#quizGo').addEventListener('click', function () {
     quizClose();
-    setTimeout(function () { bkOpen(quizPick.who, parseInt(quizPick.rooms, 10)); }, 300);
+    setTimeout(function () {
+      bkOpen(quizPick.who, parseInt(quizPick.rooms, 10), quizPick.duration);
+    }, 300);
   });
 
   /* ---------------- BOOKING PANEL ---------------- */
@@ -369,27 +381,37 @@
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
   function isoDate(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
 
-  function addRow(type, qty) {
+  function addRow(type, qty, duration) {
     var row = document.createElement('div');
     row.className = 'room-row';
     row.innerHTML =
-      '<label><span>Room Type</span>' +
+      '<label><span>Pod Type</span>' +
         '<select class="rr-type">' +
-          '<option value="single">Single Capsule — ₹900 / night</option>' +
-          '<option value="double">Double Capsule — ₹1500 / night</option>' +
+          '<option value="single1">Single Pod — 1 Person</option>' +
+          '<option value="single2">Single Pod — 2 Persons</option>' +
+          '<option value="double">Double Pod — 2 Persons</option>' +
+        '</select>' +
+      '</label>' +
+      '<label><span>Duration</span>' +
+        '<select class="rr-dur">' +
+          '<option value="3h">3 Hours</option>' +
+          '<option value="5h">5 Hours</option>' +
+          '<option value="day">Full Day</option>' +
         '</select>' +
       '</label>' +
       '<label><span>Rooms</span>' +
         '<input class="rr-qty" type="number" min="1" max="10" step="1" value="1" inputmode="numeric">' +
       '</label>' +
       '<button type="button" class="row-del" aria-label="Remove room">&times;</button>';
-    $('.rr-type', row).value = type || 'single';
+    $('.rr-type', row).value = type || 'single1';
+    $('.rr-dur', row).value = duration || 'day';
     $('.rr-qty', row).value = qty || 1;
     $('.row-del', row).addEventListener('click', function () {
       if (rowsBox.children.length <= 1) return;
       row.remove(); syncDel(); calc();
     });
     $('.rr-type', row).addEventListener('change', calc);
+    $('.rr-dur', row).addEventListener('change', calc);
     $('.rr-qty', row).addEventListener('input', calc);
     rowsBox.appendChild(row);
     syncDel();
@@ -406,17 +428,32 @@
     return diff > 0 ? Math.round(diff) : 0;
   }
 
+  // true when at least one row is an overnight stay, which is what makes dates span days
+  function hasOvernight() {
+    return $$('.rr-dur', rowsBox).some(function (s) { return s.value === 'day'; });
+  }
+
   function calc() {
-    var n = nights(), total = 0, list = $('#bkSumList');
+    var overnight = hasOvernight();
+    var n = overnight ? nights() : 0;
+    var total = 0, list = $('#bkSumList');
+
+    // hourly-only bookings are same-day, so the check-out field is meaningless
+    $('#bkOutField').hidden = !overnight;
+    $('#bkHourlyNote').hidden = overnight;
+
     list.innerHTML = '';
     $$('.room-row', rowsBox).forEach(function (row) {
       var type = $('.rr-type', row).value;
+      var dur = $('.rr-dur', row).value;
       var qty = Math.max(1, Math.min(10, parseInt($('.rr-qty', row).value, 10) || 1));
-      var sub = PRICES[type] * qty * (n || 1);
+      // only full-day rates scale with the number of nights
+      var units = dur === 'day' ? (n || 1) : 1;
+      var sub = PRICES[type][dur] * qty * units;
       total += sub;
       var li = document.createElement('li');
-      li.innerHTML = '<span>' + ROOM_LABEL[type] + ' × ' + qty +
-        (n ? ' × ' + n + ' night' + (n > 1 ? 's' : '') : '') +
+      li.innerHTML = '<span>' + ROOM_LABEL[type] + ' · ' + DUR_LABEL[dur] + ' × ' + qty +
+        (dur === 'day' && n ? ' × ' + n + ' night' + (n > 1 ? 's' : '') : '') +
         '</span><strong>₹' + sub.toLocaleString('en-IN') + '</strong>';
       list.appendChild(li);
     });
@@ -426,15 +463,12 @@
       list.appendChild(li2);
     }
     $('#bkTotal').textContent = total ? '₹' + total.toLocaleString('en-IN') : '—';
-    return { nights: n, total: total };
+    return { nights: n, total: total, overnight: overnight };
   }
 
-  function bkOpen(type, count) {
-    if (!rowsBox.children.length) addRow(type || 'single', count || 1);
-    else {
-      rowsBox.innerHTML = '';
-      addRow(type || 'single', count || 1);
-    }
+  function bkOpen(type, count, duration) {
+    rowsBox.innerHTML = '';
+    addRow(type || 'single1', count || 1, duration || 'day');
     var today = new Date();
     var tmr = new Date(today.getTime() + 86400000);
     var inEl = $('#bkIn'), outEl = $('#bkOut');
@@ -455,7 +489,7 @@
   }
 
   $('#bkBack').addEventListener('click', bkClose);
-  $('#bkAdd').addEventListener('click', function () { addRow('single', 1); calc(); });
+  $('#bkAdd').addEventListener('click', function () { addRow('single1', 1, 'day'); calc(); });
   $('#bkIn').addEventListener('change', function () {
     var d = new Date($('#bkIn').value);
     if (isNaN(d)) return;
@@ -479,9 +513,9 @@
     b.addEventListener('click', function () {
       setMenu(false);
       var room = b.dataset.room;
-      if (room) { bkOpen(room, 1); return; }
+      if (room) { bkOpen(room, 1, 'day'); return; }
       if (!quizSeen) { quizSeen = true; quizOpen(); }
-      else bkOpen(quizPick.who, parseInt(quizPick.rooms, 10));
+      else bkOpen(quizPick.who, parseInt(quizPick.rooms, 10), quizPick.duration);
     });
   });
 
@@ -518,22 +552,33 @@
     if (bad) { (name.classList.contains('is-bad') ? name : phone).focus(); return; }
 
     var sums = calc();
-    if (!sums.nights) { $('#bkOut').classList.add('is-bad'); $('#bkOut').focus(); return; }
+    if (!$('#bkIn').value) { $('#bkIn').classList.add('is-bad'); $('#bkIn').focus(); return; }
+    // only overnight bookings need a valid check-out; hourly stays are same-day
+    if (sums.overnight && !sums.nights) {
+      $('#bkOut').classList.add('is-bad'); $('#bkOut').focus(); return;
+    }
 
     var lines = [];
     lines.push('*New Booking Request — ACD Hotels*');
     lines.push('');
     lines.push('Name: ' + name.value.trim());
     lines.push('Phone: ' + phone.value.trim());
-    lines.push('Check-in: ' + niceDate($('#bkIn').value) + ' (12:00 PM)');
-    lines.push('Check-out: ' + niceDate($('#bkOut').value) + ' (11:00 AM)');
-    lines.push('Nights: ' + sums.nights);
+    if (sums.overnight) {
+      lines.push('Check-in: ' + niceDate($('#bkIn').value) + ' (12:00 PM)');
+      lines.push('Check-out: ' + niceDate($('#bkOut').value) + ' (11:00 AM)');
+      lines.push('Nights: ' + sums.nights);
+    } else {
+      lines.push('Date: ' + niceDate($('#bkIn').value));
+      lines.push('Stay: Hourly (same day)');
+    }
     lines.push('');
-    lines.push('*Rooms*');
+    lines.push('*Pods*');
     $$('.room-row', rowsBox).forEach(function (row) {
       var type = $('.rr-type', row).value;
+      var dur = $('.rr-dur', row).value;
       var qty = Math.max(1, parseInt($('.rr-qty', row).value, 10) || 1);
-      lines.push('• ' + ROOM_LABEL[type] + ' × ' + qty + ' — ₹' + PRICES[type] + '/night');
+      lines.push('• ' + ROOM_LABEL[type] + ' · ' + DUR_LABEL[dur] + ' × ' + qty +
+        ' — ₹' + PRICES[type][dur] + (dur === 'day' ? '/night' : ''));
     });
     lines.push('');
     lines.push('*Grand Total: ₹' + sums.total.toLocaleString('en-IN') + '*');

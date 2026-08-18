@@ -275,17 +275,6 @@ ul{margin:0;padding:0;list-style:none}
 }
 
 .hero-content{position:relative;z-index:3;max-width:min(100%,720px)}
-.hero-pill{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:8px 18px;border-radius:100px;margin-bottom:26px;
-  border:1px solid var(--line);background:rgba(201,168,76,.09);
-  backdrop-filter:blur(10px);
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold-lt);
-}
-.ping{width:7px;height:7px;border-radius:50%;background:var(--gold);position:relative;flex:none}
-.ping::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--gold);animation:ping 1.9s cubic-bezier(0,0,.2,1) infinite}
-@keyframes ping{0%{transform:scale(1);opacity:.85}80%,100%{transform:scale(3.2);opacity:0}}
-
 /* scales with the smaller of width/height so the CTA always stays above the fold */
 .hero-title{font-size:clamp(2.6rem,min(10.5vw,10.5vh),7rem);margin-bottom:22px;letter-spacing:-.03em}
 .hero-title .line{display:block;overflow:hidden}
@@ -447,10 +436,18 @@ ul{margin:0;padding:0;list-style:none}
 .room-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
 .room-top h3{font-size:1.5rem;margin-bottom:3px}
 .room-type{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-dim)}
-.room-price{text-align:right;line-height:1.1}
-.room-price strong{display:block;font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2rem);
-  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.room-price span{font-size:.7rem;color:var(--txt-dim);letter-spacing:.1em}
+/* hourly / full-day rate table on each room card */
+.rate-list{display:grid;gap:1px;border-radius:var(--r-sm);overflow:hidden;background:var(--line-soft)}
+.rate-list li{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:10px 14px;background:rgba(255,255,255,.028);
+  transition:background .35s var(--ease);
+}
+.rate-list li:hover{background:rgba(201,168,76,.09)}
+.rate-list li span{font-size:.8rem;color:var(--txt-mute);letter-spacing:.04em}
+.rate-list li strong{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold-lt)}
+.rate-list li:last-child{background:rgba(201,168,76,.07)}
+.rate-list li:last-child span{color:var(--txt)}
 
 .room-feats{display:flex;flex-wrap:wrap;gap:8px}
 .room-feats li{
@@ -723,7 +720,7 @@ input[type=date]{color-scheme:dark}
 
 .room-rows{display:grid;gap:14px;margin:26px 0 16px}
 .room-row{
-  display:grid;grid-template-columns:1.4fr 1fr auto;gap:12px;align-items:end;
+  display:grid;grid-template-columns:1.5fr 1.05fr .75fr auto;gap:12px;align-items:end;
   padding:18px;border-radius:var(--r);
   border:1px solid var(--line-soft);background:rgba(255,255,255,.022);
   animation:rowIn .45s var(--ease);
@@ -793,6 +790,7 @@ input[type=date]{color-scheme:dark}
   .gal-item:nth-child(1),.gal-item:nth-child(6){grid-row:span 1}
   .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
   .room-row{grid-template-columns:1fr 1fr;gap:10px}
+  .room-row label:first-child{grid-column:1/-1}
   .row-del{grid-column:2;justify-self:end;margin-top:4px}
   .rev-card{width:min(80vw,320px);padding:22px}
   .rev-track{animation-duration:38s}
@@ -828,7 +826,6 @@ input[type=date]{color-scheme:dark}
 /* short desktop viewports — keep the whole hero, CTA included, above the fold */
 @media (min-width:901px) and (max-height:880px){
   .hero{padding-top:calc(var(--hdr-h) + 18px);padding-bottom:78px}
-  .hero-pill{margin-bottom:16px}
   .hero-title{margin-bottom:14px}
   .hero-sub{margin-bottom:18px}
   .hero-rating{margin-bottom:22px}

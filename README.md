@@ -72,19 +72,39 @@ serve.py            local preview server
 
 ## Booking
 
-"Book Now" opens a two-question chooser (who's travelling, how many rooms), then the booking
-panel. The guest fills name, phone, dates, and one or more room rows; the summary prices it live
-(₹900 single / ₹1500 double × rooms × nights). Submitting opens WhatsApp to
-`wa.me/917397260932` with the whole reservation pre-written. Nothing is charged — the site
-states "Pay at Hotel", matching the hotel's policy.
+"Book Now" opens a three-question chooser (which pod, how long, how many rooms), then the booking
+panel. The guest fills name, phone, date(s), and one or more pod rows; the summary prices it live.
+Submitting opens WhatsApp to `wa.me/917397260932` with the whole reservation pre-written. Nothing
+is charged — the site states "Pay at Hotel", matching the hotel's policy.
 
-To change the number, edit `WA_NUMBER` at the top of `assets/js/main.js` and the `wa.me` and
-`tel:` links in `index.html`.
+### Rates
+
+| Pod | 3 hours | 5 hours | Full day |
+|---|---|---|---|
+| Single occupancy · 1 person | ₹400 | ₹600 | ₹900 |
+| Single occupancy · 2 persons | ₹800 | ₹1100 | ₹1200 |
+| Double occupancy · 2 persons | ₹1100 | ₹1300 | ₹1500 |
+
+Only **full day** rates multiply by the number of nights. The 3- and 5-hour rates are a single
+same-day session, so when every row is hourly the check-out field hides itself and the WhatsApp
+message says "Hourly (same day)" instead of listing nights. Mixing hourly and full-day rows in
+one booking works — the check-out field returns as soon as any row is full day.
+
+Rates live in the `PRICES` table at the top of `assets/js/main.js`, and are repeated for display
+in the room cards and the `makesOffer` structured data in `index.html`. Change all three when
+prices move.
+
+To change the phone number, edit `WA_NUMBER` at the top of `assets/js/main.js` and the `wa.me`
+and `tel:` links in `index.html`.
 
 ## Notes
 
-- Content is limited to what the live site publishes: two room types, six amenities, nine gallery
-  images, six Google reviews, the 4.8 rating, and the 12:00 PM / 11:00 AM check-in times.
+- Content is limited to what the live site publishes, plus the hourly rate card supplied by the
+  owner: six amenities, nine gallery images, six Google reviews, the 4.8 rating, and the
+  12:00 PM / 11:00 AM check-in times.
+- "Twin Explorer" (single pod, two guests) is a new third room type not on the live site. The
+  name was invented to sit alongside Solo Explorer and Couple Suite — rename it in `index.html`
+  if the hotel calls it something else.
 - Room cards show the pod counts from the live site (14 single, 4 double). The live site's
   "SOLD OUT" badges are deliberately not carried over — the rooms read as bookable.
 - Motion respects `prefers-reduced-motion`; the marquee, Ken Burns pan, parallax, and cursor glow
