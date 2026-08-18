@@ -51,6 +51,24 @@
     box.innerHTML = html;
   });
 
+  /* ---------------- TICKER ---------------- */
+  // built from the amenity taglines already used on the cards
+  var TICKER = ['Cook Your Story', 'Always Fresh', 'Always Connected',
+    'Game On', 'Squeaky Clean', 'Zero Stress Booking'];
+  var tickerTrack = $('#tickerTrack');
+  if (tickerTrack) {
+    var half = document.createDocumentFragment();
+    TICKER.forEach(function (t) {
+      var s = document.createElement('span');
+      s.textContent = t;
+      half.appendChild(s);
+      half.appendChild(document.createElement('i'));
+    });
+    // duplicated so the -50% marquee loops seamlessly
+    tickerTrack.appendChild(half.cloneNode(true));
+    tickerTrack.appendChild(half);
+  }
+
   /* ---------------- HEADER ---------------- */
   var header = $('#header'), progress = $('#scrollProgress'), lastY = 0;
 

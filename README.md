@@ -102,9 +102,14 @@ and `tel:` links in `index.html`.
 - Content is limited to what the live site publishes, plus the hourly rate card supplied by the
   owner: six amenities, nine gallery images, six Google reviews, the 4.8 rating, and the
   12:00 PM / 11:00 AM check-in times.
-- "Twin Explorer" (single pod, two guests) is a new third room type not on the live site. The
-  name was invented to sit alongside Solo Explorer and Couple Suite — rename it in `index.html`
-  if the hotel calls it something else.
+- Pod names are Solo Explorer / Twin Explorer / Double Suite. "Twin Explorer" (single pod, two
+  guests) is a new type not on the live site, and the live site's "Couple Suite" was renamed to
+  "Double Suite" so it reads as double occupancy rather than couples-only. Both two-person pods
+  carry a "Couple Friendly" tag, highlighted in mint. Rename any of them in `index.html` if the
+  hotel uses different wording.
+- Space Grotesk carries the prices, pod names and pills; Playfair Display stays on the section
+  headings. A film-grain overlay, a tagline ticker under the hero and sticker-style badges give
+  the page a younger feel without touching the photography or the copy.
 - Room cards show the pod counts from the live site (14 single, 4 double). The live site's
   "SOLD OUT" badges are deliberately not carried over — the rooms read as bookable.
 - Motion respects `prefers-reduced-motion`; the marquee, Ken Burns pan, parallax, and cursor glow

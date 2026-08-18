@@ -32,6 +32,10 @@
 
   --ease:cubic-bezier(.22,1,.36,1);
   --ease-io:cubic-bezier(.65,.05,.36,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);   /* overshoots slightly — the bouncy one */
+
+  --mint:#9dffb0;                          /* secondary accent, used sparingly */
+  --display:'Space Grotesk','Inter',sans-serif;
 
   --hdr-h:74px;
   --wrap:1240px;
@@ -137,6 +141,42 @@ ul{margin:0;padding:0;list-style:none}
 @keyframes preFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.03)}}
 .pre-bar{width:min(210px,52vw);height:2px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
 .pre-bar span{display:block;height:100%;width:0;background:var(--gold-grad);transition:width .3s linear}
+
+/* ---------- FILM GRAIN ---------- */
+.grain{
+  position:fixed;inset:-150%;z-index:995;pointer-events:none;
+  opacity:.16;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  animation:grainShift .7s steps(4) infinite;
+  will-change:transform;
+}
+@keyframes grainShift{
+  0%{transform:translate(0,0)}25%{transform:translate(-2%,1%)}
+  50%{transform:translate(1%,-2%)}75%{transform:translate(-1%,-1%)}
+  100%{transform:translate(0,0)}
+}
+
+/* ---------- TICKER ---------- */
+.ticker{
+  position:relative;overflow:hidden;
+  padding:16px 0;
+  border-block:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(201,168,76,.09),rgba(157,255,176,.05),rgba(201,168,76,.09));
+}
+.ticker-track{display:flex;align-items:center;gap:26px;width:max-content;animation:marquee 34s linear infinite}
+.ticker span{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1rem,2.4vw,1.5rem);letter-spacing:-.02em;
+  text-transform:uppercase;color:var(--txt);white-space:nowrap;
+}
+.ticker span:nth-child(4n+1){
+  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.ticker i{
+  width:9px;height:9px;flex:none;border-radius:2px;
+  background:var(--gold);transform:rotate(45deg);
+}
+.ticker:hover .ticker-track{animation-play-state:paused}
 
 /* ---------- SCROLL PROGRESS ---------- */
 .scroll-progress{
@@ -347,12 +387,17 @@ ul{margin:0;padding:0;list-style:none}
 
 .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
 .chips li{
-  padding:8px 16px;border-radius:100px;font-size:.79rem;font-weight:500;
+  padding:9px 17px;border-radius:100px;
+  font-family:var(--display);font-size:.8rem;font-weight:600;letter-spacing:-.01em;
   border:1px solid var(--line-soft);color:var(--txt-mute);
   background:rgba(255,255,255,.03);
-  transition:all .4s var(--ease);cursor:default;
+  transition:all .45s var(--spring);cursor:default;
 }
-.chips li:hover{border-color:var(--gold);color:var(--gold-lt);transform:translateY(-3px);background:rgba(201,168,76,.1)}
+.chips li:hover{
+  border-color:var(--gold);color:var(--gold-lt);background:rgba(201,168,76,.12);
+  transform:translateY(-4px) rotate(-2deg);
+}
+.chips li:nth-child(even):hover{transform:translateY(-4px) rotate(2deg)}
 
 .stat-row{display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap}
 .stat{display:grid;gap:2px}
@@ -425,37 +470,72 @@ ul{margin:0;padding:0;list-style:none}
 .room-card:hover .room-media img{transform:scale(1.08)}
 .room-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.9),transparent 58%)}
 
+/* sticker-style availability badge */
 .badge-count{
   position:absolute;bottom:16px;left:16px;z-index:2;
-  padding:6px 14px;border-radius:100px;font-size:.68rem;font-weight:600;
-  background:rgba(8,8,8,.6);color:var(--gold-lt);border:1px solid var(--line);
-  backdrop-filter:blur(8px);
+  padding:7px 15px;border-radius:100px;
+  font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.02em;
+  background:var(--gold-grad);color:#0a0a0a;border:2px solid #0a0a0a;
+  transform:rotate(-3deg);
+  box-shadow:0 6px 18px rgba(0,0,0,.45);
+  transition:transform .45s var(--spring);
 }
+.room-card:hover .badge-count{transform:rotate(2deg) scale(1.06)}
 
 .room-body{padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:18px;flex:1}
 .room-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
-.room-top h3{font-size:1.5rem;margin-bottom:3px}
-.room-type{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-dim)}
-/* hourly / full-day rate table on each room card */
-.rate-list{display:grid;gap:1px;border-radius:var(--r-sm);overflow:hidden;background:var(--line-soft)}
-.rate-list li{
-  display:flex;justify-content:space-between;align-items:center;gap:12px;
-  padding:10px 14px;background:rgba(255,255,255,.028);
-  transition:background .35s var(--ease);
+.room-top h3{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.5rem,3vw,1.85rem);letter-spacing:-.035em;margin-bottom:5px;
 }
-.rate-list li:hover{background:rgba(201,168,76,.09)}
-.rate-list li span{font-size:.8rem;color:var(--txt-mute);letter-spacing:.04em}
-.rate-list li strong{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold-lt)}
-.rate-list li:last-child{background:rgba(201,168,76,.07)}
-.rate-list li:last-child span{color:var(--txt)}
+.room-type{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+/* hourly / full-day rate table on each room card */
+.rate-list{
+  display:grid;gap:2px;border-radius:var(--r);overflow:hidden;
+  background:var(--line-soft);border:1px solid var(--line-soft);
+}
+.rate-list li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:14px 16px;background:#100f0e;
+  position:relative;overflow:hidden;
+  transition:background .4s var(--ease);
+}
+/* accent bar wipes in from the left on hover */
+.rate-list li::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--gold-grad);transform:scaleY(0);transform-origin:bottom;
+  transition:transform .4s var(--spring);
+}
+.rate-list li:hover{background:rgba(201,168,76,.1)}
+.rate-list li:hover::before{transform:scaleY(1)}
+.rate-list li span{
+  font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--txt-mute);
+}
+.rate-list li strong{
+  font-family:'Space Grotesk','Inter',sans-serif;
+  font-size:clamp(1.5rem,3.4vw,1.85rem);font-weight:700;
+  letter-spacing:-.03em;line-height:1;
+  font-variant-numeric:tabular-nums;
+  background:var(--gold-grad);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+/* full-day row is the headline rate */
+.rate-list li:last-child{background:rgba(201,168,76,.1)}
+.rate-list li:last-child span{color:var(--gold-lt)}
+.rate-list li:last-child strong{font-size:clamp(1.7rem,3.9vw,2.15rem)}
 
 .room-feats{display:flex;flex-wrap:wrap;gap:8px}
 .room-feats li{
-  padding:6px 13px;border-radius:8px;font-size:.76rem;color:var(--txt-mute);
+  padding:7px 14px;border-radius:100px;
+  font-family:var(--display);font-size:.76rem;font-weight:600;color:var(--txt-mute);
   border:1px solid var(--line-soft);background:rgba(255,255,255,.025);
-  transition:all .35s var(--ease);
+  transition:all .4s var(--spring);
 }
-.room-feats li:hover{color:var(--gold-lt);border-color:var(--line)}
+.room-feats li:hover{color:var(--gold-lt);border-color:var(--gold);transform:translateY(-2px)}
+/* couple-friendly gets the mint pop so it reads at a glance on both 2-person pods */
+.room-feats li.is-couple{color:var(--mint);border-color:rgba(157,255,176,.3);background:rgba(157,255,176,.06)}
+.room-feats li.is-couple:hover{border-color:var(--mint);color:var(--mint)}
 .room-body .btn{margin-top:auto}
 
 /* ---------- GALLERY ---------- */
